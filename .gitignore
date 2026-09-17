@@ -1,0 +1,54 @@
+# ==============================
+# Qt / C++ 通用及编译期遗留文件
+# ==============================
+# 屏蔽编译输出的中间文件
+*.o
+*.obj
+*.a
+*.ilk
+*.pdb
+
+# 屏蔽 Qt 自动生成的中间代码
+moc_*.cpp
+moc_*.h
+qrc_*.cpp
+ui_*.h
+
+# 屏蔽 Makefile (通常是自动生成的)
+Makefile
+Makefile.*
+
+# 屏蔽编译输出目录 (建议你在本地将构建目录命名为 build/ 或 build-xx/)
+build/
+build-*/
+out/
+bin/
+
+# ==============================
+# 自动生成的配置文件与本地 Log
+# ==============================
+# 屏蔽 Qt Creator 生成的本地用户配置 (包含绝对路径，不应提交)
+*.user
+*.user.*
+.qmake.stash
+
+# 屏蔽日志文件
+*.log
+
+# 注：代码(*.cpp, *.h)、UI设计(*.ui)、资源文件(*.qrc)、图片、安装包默认保留。
+# Private algorithms, target configuration, local evidence and release archives
+/private/
+/dist/
+/.qtcreator/
+**/[Ss]eedkey*.dll
+**/seedkey-vectors.json
+**/real-dll-*.json
+/profiles/*real*.json
+/config/
+*.zip
+*.7z
+*.mhtml
+.env
+.env.*
+*.pem
+*.key

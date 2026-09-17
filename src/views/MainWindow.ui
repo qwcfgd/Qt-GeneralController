@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry"><rect><x>0</x><y>0</y><width>1440</width><height>1000</height></rect></property>
+  <property name="minimumSize"><size><width>880</width><height>480</height></size></property>
+  <property name="windowTitle"><string>GBoot</string></property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="mainLayout">
+    <property name="leftMargin"><number>16</number></property>
+    <property name="topMargin"><number>10</number></property>
+    <property name="rightMargin"><number>16</number></property>
+    <property name="bottomMargin"><number>8</number></property>
+    <property name="spacing"><number>8</number></property>
+    <item>
+     <layout class="QHBoxLayout" name="heroLayout">
+      <item>
+       <layout class="QVBoxLayout" name="titleLayout">
+        <property name="spacing"><number>3</number></property>
+        <item><widget class="QLabel" name="eyebrow"><property name="text"><string>GENERAL BOOTLOADER CONTROLLER</string></property></widget></item>
+        <item><widget class="QLabel" name="heroTitle"><property name="text"><string>CAN / LIN 诊断工作台</string></property></widget></item>
+        <item><widget class="QLabel" name="heroSubtitle"><property name="text"><string>独立软件通道 · 独立 UDS 配置 · 统一下载体验</string></property></widget></item>
+       </layout>
+      </item>
+      <item><spacer name="heroSpacer"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property></spacer></item>
+      <item><widget class="QLabel" name="versionBadge"><property name="text"><string>ReleaseVer: 1.0</string></property></widget></item>
+      <item><widget class="QPushButton" name="createChannel"><property name="text"><string>＋ 创建通道</string></property></widget></item>
+      <item><widget class="QPushButton" name="loadSettings"><property name="text"><string>载入配置</string></property></widget></item>
+      <item><widget class="QPushButton" name="saveSettings"><property name="text"><string>保存通道配置</string></property></widget></item>
+     </layout>
+    </item>
+    <item><widget class="QTabWidget" name="channelTabs"><property name="documentMode"><bool>true</bool></property></widget></item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

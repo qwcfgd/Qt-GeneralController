@@ -1,0 +1,35 @@
+{
+  "version": 2,
+  "channels": [
+    {
+      "bus": "CAN",
+      "softwareId": "CAN01",
+      "profileId": "CAN UDS",
+      "hardwareKey": "",
+      "handle": 0,
+      "bitrate": 500000,
+      "simulation": true,
+      "autoReconnect": false,
+      "extendedId": false,
+      "requestId": "7E0",
+      "responseId": "7E8",
+      "functionalId": "7DF",
+      "nad": "01",
+      "p2Ms": 1000,
+      "p2StarMs": 5500,
+      "testerPresentMs": 2000,
+      "maxPendingMs": 60000,
+      "programmingSession": 2,
+      "securityLevel": 17,
+      "flashPath": "",
+      "applicationPath": "",
+      "flashAddress": "00000000",
+      "applicationAddress": "0000FF00",
+      "flashRequired": false,
+      "testerPresentEnabled": false,
+      "repeatDownloadEnabled": false,
+      "repeatDownloadCount": 2,
+      "repeatDownloadIntervalMs": 1000
+    }
+  ]
+}

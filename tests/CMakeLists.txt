@@ -1,0 +1,55 @@
+add_executable(test_communication test_communication.cpp)
+target_link_libraries(test_communication PRIVATE peak_communication Qt${QT_VERSION_MAJOR}::Test)
+add_test(NAME communication COMMAND test_communication -o "${CMAKE_CURRENT_BINARY_DIR}/communication-results.xml,xml")
+add_executable(plin_smoke plin_smoke.cpp)
+target_link_libraries(plin_smoke PRIVATE peak_communication)
+add_executable(plin_scan plin_scan.cpp)
+target_link_libraries(plin_scan PRIVATE peak_communication)
+peak_deploy(plin_scan)
+peak_deploy(test_communication)
+peak_deploy(plin_smoke)
+get_target_property(qmake_executable Qt${QT_VERSION_MAJOR}::qmake IMPORTED_LOCATION)
+get_filename_component(qt_bin "${qmake_executable}" DIRECTORY)
+find_program(WINDEPLOYQT_EXECUTABLE windeployqt HINTS "${qt_bin}" NO_DEFAULT_PATH)
+if(WINDEPLOYQT_EXECUTABLE)
+    foreach(target test_communication plin_smoke plin_scan)
+        add_custom_command(TARGET ${target} POST_BUILD
+            COMMAND "${WINDEPLOYQT_EXECUTABLE}" --no-translations --no-compiler-runtime "$<TARGET_FILE:${target}>")
+    endforeach()
+endif()
+
+add_executable(test_host_ui test_host_ui.cpp)
+target_link_libraries(test_host_ui PRIVATE bootloader_ui Qt${QT_VERSION_MAJOR}::Test)
+host_deploy(test_host_ui)
+add_custom_command(TARGET test_host_ui POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different "${qt_bin}/../plugins/platforms/qoffscreen.dll" "$<TARGET_FILE_DIR:test_host_ui>/platforms/qoffscreen.dll")
+add_test(NAME host_ui COMMAND test_host_ui -o "${CMAKE_CURRENT_BINARY_DIR}/host-ui-results.xml,xml")
+set_tests_properties(host_ui PROPERTIES ENVIRONMENT "QT_QPA_PLATFORM=windows" TIMEOUT 60)
+
+add_executable(test_protocol test_protocol.cpp)
+target_link_libraries(test_protocol PRIVATE bootloader_protocol Qt${QT_VERSION_MAJOR}::Test)
+host_deploy(test_protocol)
+add_test(NAME protocol COMMAND test_protocol -o "${CMAKE_CURRENT_BINARY_DIR}/protocol-results.xml,xml")
+set_tests_properties(protocol PROPERTIES TIMEOUT 90)
+
+add_executable(test_can_protocol test_can_protocol.cpp)
+target_link_libraries(test_can_protocol PRIVATE bootloader_protocol Qt${QT_VERSION_MAJOR}::Test)
+host_deploy(test_can_protocol)
+add_test(NAME can_protocol COMMAND test_can_protocol -o "${CMAKE_CURRENT_BINARY_DIR}/can-protocol-results.xml,xml")
+set_tests_properties(can_protocol PROPERTIES TIMEOUT 90)
+
+# Runs only after deployment; exercises the files in the release directory.
+add_executable(VerifyRelease release_smoke.cpp)
+target_link_libraries(VerifyRelease PRIVATE bootloader_ui Qt${QT_VERSION_MAJOR}::Test)
+host_deploy(VerifyRelease)
+
+add_executable(test_download_revision test_download_revision.cpp)
+target_link_libraries(test_download_revision PRIVATE bootloader_ui Qt${QT_VERSION_MAJOR}::Test)
+host_deploy(test_download_revision)
+add_test(NAME download_revision COMMAND test_download_revision -o "${CMAKE_CURRENT_BINARY_DIR}/download-revision-results.xml,xml")
+set_tests_properties(download_revision PROPERTIES ENVIRONMENT "QT_QPA_PLATFORM=windows" TIMEOUT 90)
+
+# Manual, explicitly requested hardware debugging only; never part of CTest.
+add_executable(lin_download_debug lin_download_debug.cpp)
+target_link_libraries(lin_download_debug PRIVATE bootloader_ui)
+host_deploy(lin_download_debug)

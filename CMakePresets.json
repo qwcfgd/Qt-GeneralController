@@ -1,0 +1,321 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "qt6",
+      "displayName": "Local Qt 6 x64",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/stage2-update/qt6",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+        "CMAKE_PREFIX_PATH": "C:/Qt/6.8.4/mingw1200_64",
+        "CMAKE_CXX_COMPILER": "C:/MinGW/12.0.0/mingw64/bin/g++.exe"
+      },
+      "environment": {
+        "PATH": "C:/MinGW/12.0.0/mingw64/bin;C:/Qt/6.8.4/mingw1200_64/bin;$penv{PATH}"
+      }
+    },
+    {
+      "name": "qt5",
+      "displayName": "Local Qt 5 x64",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/stage2-update/qt5",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+        "CMAKE_PREFIX_PATH": "C:/Qt/5.15.19/mingw810_64",
+        "CMAKE_CXX_COMPILER": "C:/MinGW/8.1.0/mingw64/bin/g++.exe"
+      },
+      "environment": {
+        "PATH": "C:/MinGW/8.1.0/mingw64/bin;C:/Qt/5.15.19/mingw810_64/bin;$penv{PATH}"
+      }
+    },
+    {
+      "name": "stage3-qt6",
+      "displayName": "Local Qt 6 x64",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/stage3/qt6",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+        "CMAKE_PREFIX_PATH": "C:/Qt/6.8.4/mingw1200_64",
+        "CMAKE_CXX_COMPILER": "C:/MinGW/12.0.0/mingw64/bin/g++.exe"
+      },
+      "environment": {
+        "PATH": "C:/MinGW/12.0.0/mingw64/bin;C:/Qt/6.8.4/mingw1200_64/bin;$penv{PATH}"
+      }
+    },
+    {
+      "name": "stage3-qt5",
+      "displayName": "Local Qt 5 x64",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/stage3/qt5",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+        "CMAKE_PREFIX_PATH": "C:/Qt/5.15.19/mingw810_64",
+        "CMAKE_CXX_COMPILER": "C:/MinGW/8.1.0/mingw64/bin/g++.exe"
+      },
+      "environment": {
+        "PATH": "C:/MinGW/8.1.0/mingw64/bin;C:/Qt/5.15.19/mingw810_64/bin;$penv{PATH}"
+      }
+    },
+    {
+      "name": "stage4-qt6",
+      "displayName": "Local Qt 6 x64",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/stage4/qt6",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+        "CMAKE_PREFIX_PATH": "C:/Qt/6.8.4/mingw1200_64",
+        "CMAKE_CXX_COMPILER": "C:/MinGW/12.0.0/mingw64/bin/g++.exe"
+      },
+      "environment": {
+        "PATH": "C:/MinGW/12.0.0/mingw64/bin;C:/Qt/6.8.4/mingw1200_64/bin;$penv{PATH}"
+      }
+    },
+    {
+      "name": "stage4-qt5",
+      "displayName": "Local Qt 5 x64",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/stage4/qt5",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+        "CMAKE_PREFIX_PATH": "C:/Qt/5.15.19/mingw810_64",
+        "CMAKE_CXX_COMPILER": "C:/MinGW/8.1.0/mingw64/bin/g++.exe"
+      },
+      "environment": {
+        "PATH": "C:/MinGW/8.1.0/mingw64/bin;C:/Qt/5.15.19/mingw810_64/bin;$penv{PATH}"
+      }
+    },
+    {
+      "name": "release-qt6",
+      "displayName": "Local Qt 6 x64",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/stage5/qt6",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_PREFIX_PATH": "C:/Qt/6.8.4/mingw1200_64",
+        "CMAKE_CXX_COMPILER": "C:/MinGW/12.0.0/mingw64/bin/g++.exe"
+      },
+      "environment": {
+        "PATH": "C:/MinGW/12.0.0/mingw64/bin;C:/Qt/6.8.4/mingw1200_64/bin;$penv{PATH}"
+      }
+    },
+    {
+      "name": "release-qt5",
+      "displayName": "Local Qt 5 x64",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/stage5/qt5",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_PREFIX_PATH": "C:/Qt/5.15.19/mingw810_64",
+        "CMAKE_CXX_COMPILER": "C:/MinGW/8.1.0/mingw64/bin/g++.exe"
+      },
+      "environment": {
+        "PATH": "C:/MinGW/8.1.0/mingw64/bin;C:/Qt/5.15.19/mingw810_64/bin;$penv{PATH}"
+      }
+    },
+    {
+      "name": "stage6-qt5",
+      "displayName": "Local Qt 5 x64",
+      "generator": "Ninja",
+      "binaryDir": "build/stage6/qt5",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_PREFIX_PATH": "C:/Qt/5.15.19/mingw810_64",
+        "CMAKE_CXX_COMPILER": "C:/MinGW/8.1.0/mingw64/bin/g++.exe"
+      },
+      "environment": {
+        "PATH": "C:/MinGW/8.1.0/mingw64/bin;C:/Qt/5.15.19/mingw810_64/bin;$penv{PATH}"
+      }
+    },
+    {
+      "name": "stage6-qt6",
+      "displayName": "Local Qt 6 x64",
+      "generator": "Ninja",
+      "binaryDir": "build/stage6/qt6",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_PREFIX_PATH": "C:/Qt/6.8.4/mingw1200_64",
+        "CMAKE_CXX_COMPILER": "C:/MinGW/12.0.0/mingw64/bin/g++.exe"
+      },
+      "environment": {
+        "PATH": "C:/MinGW/12.0.0/mingw64/bin;C:/Qt/6.8.4/mingw1200_64/bin;$penv{PATH}"
+      }
+    },
+    {
+      "name": "stage7-qt5",
+      "displayName": "Local Qt 5 x64",
+      "generator": "Ninja",
+      "binaryDir": "build/stage7/qt5",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_PREFIX_PATH": "C:/Qt/5.15.19/mingw810_64",
+        "CMAKE_CXX_COMPILER": "C:/MinGW/8.1.0/mingw64/bin/g++.exe"
+      },
+      "environment": {
+        "PATH": "C:/MinGW/8.1.0/mingw64/bin;C:/Qt/5.15.19/mingw810_64/bin;$penv{PATH}"
+      }
+    },
+    {
+      "name": "stage7-qt6",
+      "displayName": "Local Qt 6 x64",
+      "generator": "Ninja",
+      "binaryDir": "build/stage7/qt6",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_PREFIX_PATH": "C:/Qt/6.8.4/mingw1200_64",
+        "CMAKE_CXX_COMPILER": "C:/MinGW/12.0.0/mingw64/bin/g++.exe"
+      },
+      "environment": {
+        "PATH": "C:/MinGW/12.0.0/mingw64/bin;C:/Qt/6.8.4/mingw1200_64/bin;$penv{PATH}"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "qt6",
+      "configurePreset": "qt6",
+      "jobs": 4
+    },
+    {
+      "name": "qt5",
+      "configurePreset": "qt5",
+      "jobs": 4
+    },
+    {
+      "name": "stage3-qt6",
+      "configurePreset": "stage3-qt6",
+      "jobs": 4
+    },
+    {
+      "name": "stage3-qt5",
+      "configurePreset": "stage3-qt5",
+      "jobs": 4
+    },
+    {
+      "name": "stage4-qt6",
+      "configurePreset": "stage4-qt6",
+      "jobs": 4
+    },
+    {
+      "name": "stage4-qt5",
+      "configurePreset": "stage4-qt5",
+      "jobs": 4
+    },
+    {
+      "name": "release-qt6",
+      "configurePreset": "release-qt6",
+      "jobs": 4
+    },
+    {
+      "name": "release-qt5",
+      "configurePreset": "release-qt5",
+      "jobs": 4
+    },
+    {
+      "name": "stage6-qt5",
+      "configurePreset": "stage6-qt5",
+      "jobs": 4
+    },
+    {
+      "name": "stage6-qt6",
+      "configurePreset": "stage6-qt6",
+      "jobs": 4
+    },
+    {
+      "name": "stage7-qt5",
+      "configurePreset": "stage7-qt5",
+      "jobs": 4
+    },
+    {
+      "name": "stage7-qt6",
+      "configurePreset": "stage7-qt6",
+      "jobs": 4
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "qt6",
+      "configurePreset": "qt6",
+      "output": {
+        "outputOnFailure": true
+      }
+    },
+    {
+      "name": "qt5",
+      "configurePreset": "qt5",
+      "output": {
+        "outputOnFailure": true
+      }
+    },
+    {
+      "name": "stage3-qt6",
+      "configurePreset": "stage3-qt6",
+      "output": {
+        "outputOnFailure": true
+      }
+    },
+    {
+      "name": "stage3-qt5",
+      "configurePreset": "stage3-qt5",
+      "output": {
+        "outputOnFailure": true
+      }
+    },
+    {
+      "name": "stage4-qt6",
+      "configurePreset": "stage4-qt6",
+      "output": {
+        "outputOnFailure": true
+      }
+    },
+    {
+      "name": "stage4-qt5",
+      "configurePreset": "stage4-qt5",
+      "output": {
+        "outputOnFailure": true
+      }
+    },
+    {
+      "name": "release-qt6",
+      "configurePreset": "release-qt6",
+      "output": {
+        "outputOnFailure": true
+      }
+    },
+    {
+      "name": "release-qt5",
+      "configurePreset": "release-qt5",
+      "output": {
+        "outputOnFailure": true
+      }
+    },
+    {
+      "name": "stage6-qt5",
+      "configurePreset": "stage6-qt5",
+      "output": {
+        "outputOnFailure": true
+      }
+    },
+    {
+      "name": "stage6-qt6",
+      "configurePreset": "stage6-qt6",
+      "output": {
+        "outputOnFailure": true
+      }
+    },
+    {
+      "name": "stage7-qt5",
+      "configurePreset": "stage7-qt5",
+      "output": {
+        "outputOnFailure": true
+      }
+    },
+    {
+      "name": "stage7-qt6",
+      "configurePreset": "stage7-qt6",
+      "output": {
+        "outputOnFailure": true
+      }
+    }
+  ]
+}
